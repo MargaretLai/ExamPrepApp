@@ -2,18 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.sign-in-box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.user-input {
+  display: block;
+  margin: 2.5rem auto;
+}
+
+.user-input-button {
+  margin-top: 1rem;
+}
+
+.save-flashcards-btn {
+  display: block;
+  margin: 2.2rem auto;
 }

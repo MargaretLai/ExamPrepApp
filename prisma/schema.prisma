@@ -3,19 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
-}
-
-model Flashcard {
-  id                   Int                 @id @default(autoincrement())
-  flashcard_front      String
-  flashcard_back       String
-  savedFlashcardListId Int?
-  createdAt            DateTime            @default(now())
-  updatedAt            DateTime
-  savedFlashcardList   savedFlashcardList? @relation(fields: [savedFlashcardListId], references: [id])
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Pet {
@@ -32,10 +21,20 @@ model Post {
 
 model savedFlashcardList {
   id           Int         @id @default(autoincrement())
-  userID       String
+  userID       String // Clerk.js user ID
   listName     String
+  flashcards   Flashcard[]
   flashcardIds Int[]
   createdAt    DateTime    @default(now())
-  updatedAt    DateTime
-  Flashcard    Flashcard[]
+  updatedAt    DateTime    @updatedAt
+}
+
+model Flashcard {
+  id                   Int                 @id @default(autoincrement())
+  flashcard_front      String
+  flashcard_back       String
+  list                 savedFlashcardList? @relation(fields: [savedFlashcardListId], references: [id])
+  savedFlashcardListId Int?
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
 }
