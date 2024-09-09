@@ -6,8 +6,8 @@ import style from "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AI Flashcard Generator",
-  description: "An AI app that generates flashcards from text",
+  title: "ExamMax",
+  description: "An AI app that helps you prepare for exam better",
 };
 
 export default function RootLayout({ children }) {
