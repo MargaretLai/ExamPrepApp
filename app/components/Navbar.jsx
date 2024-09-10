@@ -24,6 +24,9 @@ export default function Navbar() {
       </SignedOut>
       <SignedIn>
         <div className="flex-none flex items-center">
+          <Link href="/quiz" className="btn btn-ghost">
+            Quiz
+          </Link>
           <Link href="/saved-lists" className="btn btn-ghost">
             Saved Flashcard Lists
           </Link>
