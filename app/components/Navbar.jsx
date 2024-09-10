@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="navbar bg-neutral text-neutral-content">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
-          FlashcardPlus
+          ExamMax
         </Link>
       </div>
       <SignedOut>
